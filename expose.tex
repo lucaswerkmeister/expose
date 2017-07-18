@@ -29,7 +29,6 @@ and that most chemical elements have a “mass” statement, but with varying va
 Data schemata can be expressed using the Shape Expressions Language (ShEx) \cite{Prud'hommeaux:2014:SER:2660517.2660523},
 referring to the RDF output format of Wikidata.
 The output of the inference process would therefore be a ShEx schema in one of the ShEx syntaxes, e.\,g. ShExC.
-ShEx has previously been used to validate RDF data, e.\,g. in \cite{SOLBRIG201790}.
 
 These schemata could be stored on Wikidata itself,
 where they would be open to users amending and improving them.
@@ -59,6 +58,13 @@ it is possible that the statement should be added
 (in this case, an ontology might have inferred the statement),
 but it is equally possible that something else should be changed about the item so that the missing statement is no longer expected,
 or that the schema simply does not apply to the item and nothing should be done at all.
+
+\section{Related Work}
+
+Schema inference has previously been done on XML \cite{Bex:2007:IXS:1325851.1325964} and JSON \cite{json-inference};
+on RDF, research has mostly focused on ontology learning \cite{Zhou2007}, a related but different problem.
+
+ShEx has previously been used to validate RDF data in \cite{SOLBRIG201790}.
 
 \bibliographystyle{plain}
 \bibliography{expose}
