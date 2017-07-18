@@ -24,6 +24,17 @@ For example, one could infer that all composers have a statement “instance of:
 that all capitals have a statement “instance of: (some subclass of) city”;
 and that most chemical elements have a “mass” statement, but with varying values.
 
+\section{Use}
+
+A practical use of these schemata could be to check the compliance of other Wikidata items to these shapes,
+in order to use them for quality control.
+Running these checks periodically, and saving the results each time,
+could yield an impression of the development of data quality on Wikidata over time.
+
+The individual shapes constituting the schemata could also be used to streamline data entry into Wikidata:
+the user selects the shape of the data they would like to enter,
+and the user interface suggests statements based on the shape.
+
 \section{Details}
 
 Data schemata can be expressed using the Shape Expressions Language (ShEx) \cite{Prud'hommeaux:2014:SER:2660517.2660523},
@@ -35,17 +46,6 @@ where they would be open to users amending and improving them.
 Of course, the average Wikidata editor cannot be expected to be familiar with ShEx,
 but since several community members are already investigating the use of ShEx on Wikidata,
 a collaborative effort seems possible.
-
-\section{Use}
-
-A practical use of these schemata could be to check the compliance of other Wikidata items to these shapes,
-in order to use them for quality control.
-Running these checks periodically, and saving the results each time,
-could yield an impression of the development of data quality on Wikidata over time.
-
-The individual shapes constituting the schemata could also be used to streamline data entry into Wikidata:
-the user selects the shape of the data they would like to enter,
-and the user interface suggests statements based on the shape.
 
 \section{Schema Inference vs. Ontology Learning}
 
