@@ -1,0 +1,71 @@
+\documentclass{scrartcl}
+\usepackage[utf8]{inputenc}
+
+\DeclareUnicodeCharacter{202F}{'e}
+
+\title{Schema Inference on Wikidata}
+\subtitle{Exposé (Draft)}
+\author{Lucas Werkmeister}
+
+\begin{document}
+
+\maketitle
+
+\section{Goal}
+
+The main goal of this thesis will be to automatically infer data schemata from Wikidata items:
+given a set of exemplary items (e.\,g. some composers, some capitals, or some chemical elements),
+determine which aspects all items have in common (mandatory constraints),
+which aspects most of them have in common (non-mandatory constraints),
+and which ones are particular to each individual item.
+
+For example, one could infer that all composers have a statement “instance of: human”;
+that all capitals have a statement “instance of: (some subclass of) city”;
+and that most chemical elements have a “mass” statement, but with varying values.
+
+\section{Details}
+
+Data schemata can be expressed using the Shape Expressions Language (ShEx),
+referring to the RDF output format of Wikidata.
+The output of the inference process would therefore be a ShEx schema in one of the ShEx syntaxes, e.\,g. ShExC.
+ShEx has previously been used to validate RDF data, e.\,g. in Modeling and validating HL7 FHIR profiles using semantic web Shape Expressions (ShEx).
+
+If the Wikidata community thinks this could be useful, these schemata could be stored on Wikidata itself,
+where they would be open to users amending and improving them.
+Of course, the average Wikidata editor cannot be expected to be familiar with ShEx;
+however, since several community members are already investigating the use of ShEx on Wikidata, a collaborative effort seems possible.
+
+\section{Use}
+
+A practical use of these schemata could be to check the compliance of other Wikidata items to these shapes,
+in order to use them for quality control.
+Running these checks periodically, and saving the results each time,
+could yield an impression of the development of data quality on Wikidata over time.
+
+The individual shapes constituting the schemata could also be used to streamline data entry into Wikidata:
+the user selects the shape of the data they would like to enter,
+and the user interface suggests statements based on the shape.
+
+\section{Schema Inference vs. Ontology Learning}
+
+The goal of this work is explicitly the inference of schemata of the data representation on Wikidata,
+not the learning of an ontology on the data.
+When an item is in violation of a schema,
+for instance because an expected statement is missing,
+this implies nothing more than the simple fact of the violation:
+it is possible that the statement should be added
+(in this case, an ontology might have inferred the statement),
+but it is equally possible that something else should be changed about the item so that the missing statement is no longer expected,
+or that the schema simply does not apply to the item and nothing should be done at all.
+
+Schema inference also seems to be more feasible for Wikidata because there is no single ontology of Wikidata, not even informally.
+Different subcommunities or WikiProjects, or even individual editors, may disagree about the best way to model some data,
+which can result in different items recording the same information in different ways.
+In addition, some statements on Wikidata are simply incorrect, e.\,g. due to confusion between different items with similar labels
+(a common example are disambiguation pages and name items)
+or plain vandalism.
+Ontology learning would have to take these possibilities, which are not usually found in other RDF datasets, into account;
+by contrast, schema inference for the purpose of quality control is built on the assumption that the input data is not perfect,
+as otherwise there would be no need to infer schemata in the first place.
+
+\end{document}
