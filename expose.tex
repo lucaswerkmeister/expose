@@ -31,10 +31,11 @@ referring to the RDF output format of Wikidata.
 The output of the inference process would therefore be a ShEx schema in one of the ShEx syntaxes, e.\,g. ShExC.
 ShEx has previously been used to validate RDF data, e.\,g. in \cite{SOLBRIG201790}.
 
-If the Wikidata community thinks this could be useful, these schemata could be stored on Wikidata itself,
+These schemata could be stored on Wikidata itself,
 where they would be open to users amending and improving them.
-Of course, the average Wikidata editor cannot be expected to be familiar with ShEx;
-however, since several community members are already investigating the use of ShEx on Wikidata, a collaborative effort seems possible.
+Of course, the average Wikidata editor cannot be expected to be familiar with ShEx,
+but since several community members are already investigating the use of ShEx on Wikidata,
+a collaborative effort seems possible.
 
 \section{Use}
 
@@ -58,16 +59,6 @@ it is possible that the statement should be added
 (in this case, an ontology might have inferred the statement),
 but it is equally possible that something else should be changed about the item so that the missing statement is no longer expected,
 or that the schema simply does not apply to the item and nothing should be done at all.
-
-Schema inference also seems to be more feasible for Wikidata because there is no single ontology of Wikidata, not even informally.
-Different subcommunities or WikiProjects, or even individual editors, may disagree about the best way to model some data,
-which can result in different items recording the same information in different ways.
-In addition, some statements on Wikidata are simply incorrect, e.\,g. due to confusion between different items with similar labels
-(a common example are disambiguation pages and name items)
-or plain vandalism.
-Ontology learning would have to take these possibilities, which are not usually found in other RDF datasets, into account;
-by contrast, schema inference for the purpose of quality control is built on the assumption that the input data is not perfect,
-as otherwise there would be no need to infer schemata in the first place.
 
 \bibliographystyle{plain}
 \bibliography{expose}
