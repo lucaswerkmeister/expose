@@ -1,5 +1,6 @@
 \documentclass{scrartcl}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
 
 \DeclareUnicodeCharacter{202F}{'e}
 
@@ -25,10 +26,10 @@ and that most chemical elements have a “mass” statement, but with varying va
 
 \section{Details}
 
-Data schemata can be expressed using the Shape Expressions Language (ShEx),
+Data schemata can be expressed using the Shape Expressions Language (ShEx) \cite{shex},
 referring to the RDF output format of Wikidata.
 The output of the inference process would therefore be a ShEx schema in one of the ShEx syntaxes, e.\,g. ShExC.
-ShEx has previously been used to validate RDF data, e.\,g. in Modeling and validating HL7 FHIR profiles using semantic web Shape Expressions (ShEx).
+ShEx has previously been used to validate RDF data, e.\,g. in \cite{SOLBRIG201790}.
 
 If the Wikidata community thinks this could be useful, these schemata could be stored on Wikidata itself,
 where they would be open to users amending and improving them.
@@ -67,5 +68,8 @@ or plain vandalism.
 Ontology learning would have to take these possibilities, which are not usually found in other RDF datasets, into account;
 by contrast, schema inference for the purpose of quality control is built on the assumption that the input data is not perfect,
 as otherwise there would be no need to infer schemata in the first place.
+
+\bibliographystyle{plain}
+\bibliography{expose}
 
 \end{document}
