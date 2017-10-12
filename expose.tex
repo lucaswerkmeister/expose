@@ -4,7 +4,7 @@
 
 \DeclareUnicodeCharacter{202F}{'e}
 
-\title{Schema Inference on Wikidata}
+\title{Schema Inference and Validation on Wikidata}
 \subtitle{Exposé}
 \author{Lucas Werkmeister}
 
@@ -14,22 +14,17 @@
 
 \section{Goal}
 
-The main goal of this thesis will be to automatically infer data schemata from Wikidata items:
-given a set of exemplary items (e.\,g. some composers, some capitals, or some chemical elements),
-determine which aspects all items have in common (mandatory constraints),
-which aspects most of them have in common (non-mandatory constraints),
-and which ones are particular to each individual item.
-
-For example, one could infer that all composers have a statement “instance of: human”;
+The main goal of this thesis will be to use data schemata for quality control on Wikidata items.
+This will include developing a way to infer such schemata from a set of exemplary items:
+for example, given some composers, some capitals, or some chemical elements,
+one could infer that all composers have a statement “instance of: human”;
 that all capitals have a statement “instance of: (some subclass of) city”;
 and that most chemical elements have a “mass” statement, but with varying values.
-
-\section{Use}
-
-A practical use of these schemata could be to check the compliance of other Wikidata items to these shapes,
-in order to use them for quality control.
-Running these checks periodically, and saving the results each time,
-could yield an impression of the development of data quality on Wikidata over time.
+These schemata can then be used to validate other Wikidata items.
+A maintenance scheme,
+which is required to ensure the continued usefulness of the data schemata
+as the data model on Wikidata evolves,
+will also be developed.
 
 \section{Details}
 
