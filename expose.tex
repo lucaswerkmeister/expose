@@ -1,8 +1,14 @@
 \documentclass{scrartcl}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{glossaries}
 
 \DeclareUnicodeCharacter{202F}{'e}
+
+\newacronym{shex}{ShEx}{Shape Expressions}
+\newacronym{rdf}{RDF}{Resource Description Framework}
+
+\makeglossaries
 
 \title{Schema Inference and Validation on Wikidata}
 \subtitle{Exposé}
@@ -28,14 +34,14 @@ will also be developed.
 
 \section{Details}
 
-Data schemata can be expressed using the Shape Expressions Language (ShEx) \cite{Prud'hommeaux:2014:SER:2660517.2660523},
-referring to the RDF output format of Wikidata.
-The output of the inference process would therefore be a ShEx schema in one of the ShEx syntaxes, e.\,g. ShExC.
+Data schemata can be expressed using the \gls{shex} Language \cite{Prud'hommeaux:2014:SER:2660517.2660523},
+referring to the \gls{rdf} output format of Wikidata.
+The output of the inference process would therefore be a \gls{shex} schema in one of the \gls{shex} syntaxes, e.\,g. ShExC.
 
 These schemata could be stored on Wikidata itself,
 where they would be open to users amending and improving them.
-Of course, the average Wikidata editor cannot be expected to be familiar with ShEx,
-but since several community members are already investigating the use of ShEx on Wikidata,
+Of course, the average Wikidata editor cannot be expected to be familiar with \gls{shex},
+but since several community members are already investigating the use of \gls{shex} on Wikidata,
 a collaborative effort seems possible.
 
 \section{Schema Inference vs. Ontology Learning}
@@ -53,13 +59,13 @@ or that the schema simply does not apply to the item and nothing should be done 
 \section{Related Work}
 
 Schema inference has previously been done on XML \cite{Bex:2007:IXS:1325851.1325964} and JSON \cite{json-inference}.
-On RDF, there has been more focus on ontology learning \cite{Zhou2007}, a related but different problem.
-RDF2Graph \cite{vanDam2015} can recover the structure of an RDF resource and express it in ShEx,
+On \gls{rdf}, there has been more focus on ontology learning \cite{Zhou2007}, a related but different problem.
+RDF2Graph \cite{vanDam2015} can recover the structure of an \gls{rdf} resource and express it in \gls{shex},
 but generally assumes a well-maintained, unified ontology,
 which is not always the case on Wikidata.
 
 
-ShEx has previously been used to validate RDF data in \cite{SOLBRIG201790}.
+\gls{shex} has previously been used to validate \gls{rdf} data in \cite{SOLBRIG201790}.
 
 \bibliographystyle{plain}
 \bibliography{expose}
